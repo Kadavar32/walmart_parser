@@ -165,12 +165,9 @@ production:
         # (required).
         allow_dynamic_fields: true
         database: walmart_parser_production
-        hosts:
-          - localhost:27017
-        # Provides the hosts the default client can connect to. Must be an array
-        # of host:port pairs. (required)
+        uri: &lt;%= ENV['MONGODB_URI'] %&gt;
         options:
           skip_version_check: true
-          safe: true
+        safe: true
 
 
