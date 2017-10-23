@@ -16,6 +16,6 @@ class Review
   search_in :text, :title
 
   def as_json(options = {})
-    super({ except: [:_id] })
+    super({ except: [:_id, :_keywords] })
   end
 end
