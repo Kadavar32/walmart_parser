@@ -1,0 +1,8 @@
+<%= form_for :product, url: products_path do |f| %>
+    <p>
+      <%= f.label :walmart_url %><br>
+      <%= f.text_field :url, length: 500 %>
+    </p>
+      <%= f.submit %>
+    </p>
+<% end %>
