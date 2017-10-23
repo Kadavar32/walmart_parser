@@ -5,5 +5,7 @@ class ReviewsController < ApplicationController
     product = Product.find_by(id: params[:product_id])
 
     render json: product.reviews
+  rescue => exc
+    render json: { errors: exc.message }
   end
 end

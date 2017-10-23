@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+heroku_app_url: https://secret-dusk-78166.herokuapp.com
 
-Things you may want to cover:
+API endpoints:
 
-* Ruby version
+POST /products?product[url]=walmart_url
 
-* System dependencies
+GET /product/:product_id/reviews
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+product_id can be found in POST /products response
