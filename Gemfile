@@ -36,7 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'nokogiri'
 gem 'mongoid'
 gem 'bson_ext'
-gem 'mongoid_search'
+gem 'mongoid_fulltext'
+gem 'rack-timeout'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

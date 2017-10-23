@@ -11,7 +11,18 @@ class ProductsController < ApplicationController
 
     render json: product.as_json
   rescue => exc
+    Rails.logger.error "search error #{exc.message}"
     render json: { errors: exc.message }
+  end
+
+  def search
+    q = params[:q]
+    products = Product.fulltext_search(q)
+
+    render json: products.as_json
+  rescue => exc
+    Rails.logger.error "search error #{exc.message}"
+    render json: []
   end
 
   def new; end

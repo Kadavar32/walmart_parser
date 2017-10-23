@@ -2,7 +2,6 @@
 class Review
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
-  include Mongoid::Search
 
   field :walmart_review_id, type: Integer
   field :text, type: String
@@ -11,9 +10,7 @@ class Review
   field :title, type: String
   field :submission_time, type: String
 
-  embedded_in :review, inverse_of: :members
-
-  search_in :text, :title
+  embedded_in :review
 
   def as_json(options = {})
     super({ except: [:_id, :_keywords] })

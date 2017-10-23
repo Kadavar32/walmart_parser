@@ -1,7 +1,7 @@
 # /app/models/product.rb
 class Product
   include Mongoid::Document
-  include Mongoid::Search
+  include Mongoid::FullTextSearch
 
   field :name, type: String
   field :walmart_url, type: String
@@ -15,7 +15,7 @@ class Product
 
   index({ walmart_url: 1 }, { unique: true, name: 'walmart_url_index' })
 
-  search_in :name, reviews: [ :text, :title ]
+  fulltext_search_in :name, reviews: [:text, :title]
 
   def as_json(options = {})
     super({ except: [:_id, :_keywords, :reviews], methods: [:uid] }.merge(options))
