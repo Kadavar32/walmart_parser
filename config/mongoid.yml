@@ -165,7 +165,7 @@ production:
         # (required).
         allow_dynamic_fields: true
         database: walmart_parser_production
-        uri: &lt;%= ENV['MONGODB_URI'] %&gt;
+        uri: ENV['MONGODB_URI']
         options:
           skip_version_check: true
         safe: true
