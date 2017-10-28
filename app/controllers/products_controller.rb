@@ -1,5 +1,6 @@
-require 'open-uri'
 # app/controllers/products_controller.rb
+require 'open-uri'
+
 class ProductsController < ApplicationController
   skip_before_action :verify_authenticity_token
 

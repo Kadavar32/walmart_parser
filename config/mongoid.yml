@@ -7,6 +7,8 @@ development:
       # (required).
       allow_dynamic_fields: true
       database: walmart_parser_development
+
+
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -164,9 +166,7 @@ production:
         # Defines the name of the default database that Mongoid can connect to.
         # (required).
         allow_dynamic_fields: true
-        database: walmart_parser_production
-        hosts:
-          - localhost:27017
+        uri: mongodb://heroku_d5b0hn2d:mk9lpp15on8vk9es43ncb3a2d2@ds237735.mlab.com:37735/heroku_d5b0hn2d
         options:
           skip_version_check: true
         safe: true
