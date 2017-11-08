@@ -1,5 +1,4 @@
 # app/controllers/products_controller.rb
-require 'open-uri'
 
 class ProductsController < ApplicationController
   skip_before_action :verify_authenticity_token
@@ -13,7 +12,7 @@ class ProductsController < ApplicationController
     render json: product.as_json
   rescue => exc
     Rails.logger.error "search error #{exc.message}"
-    render json: { errors: exc.message }
+    render json: { message: 'Error' }
   end
 
   def search
